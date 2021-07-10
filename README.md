@@ -7,7 +7,11 @@
 
 # `isocodes`
 
-Easy to use ISO codes for Nim, which allows to embed the data within the executable (or load it automatically at runtime).
+ISO codes for Nim that allows to embed the data within the executable (or load 
+it automatically at runtime).
+
+Provides the utility `isocodes_download` to download latest JSON packages when
+you don't want to use the provided ones (or if they become obsolete).
 
 [![made-with-nim](https://img.shields.io/badge/Made%20with-Nim-ffc200.svg)](https://nim-lang.org/) ![Build](https://github.com/kraptor/isocodes/workflows/Build/badge.svg)
 
@@ -28,15 +32,18 @@ Easy to use ISO codes for Nim, which allows to embed the data within the executa
 
 ## API
 
-All procedures can be accessed by using the corresponding type. For example: `Country`.
+All procedures/iterators can be accessed by using the corresponding type.
+For example: `Country`.
 
-Procedures either return an `Option[T]` object or a `seq[T]` (when multiple values can be requested).
+Procedures either return an `Option[T]` object or a `seq[T]` (when multiple
+values can be requested).
 
-> **IMPORTANT**: Procedures ending in `It` return an iterator, instead of a `seq[T]`, if you don't want to store/build a copy of the data requested.
+> **IMPORTANT**: Procedures ending in `It` return an iterator, instead of a
+`seq[T]`, if you don't want to store/build a copy of the data requested.
 
 ### Country API
 
-#### Attributes
+#### Country Attributes
 
 The following attributes are available for each `Country` instance:
 
@@ -49,7 +56,7 @@ The following attributes are available for each `Country` instance:
 |`alpha_3`      | country ISO code (3 characters).|
 |`numeric`      | numeric code for the country. **NOTE**: this is a string. |
 
-#### Procedures
+#### Country Procedures
 
 | Procedure | Description |
 |-|-|
@@ -68,9 +75,16 @@ The following attributes are available for each `Country` instance:
 
 ### CountrySubdivision API
 
-#### Attributes
+#### CountrySubdivision Attributes
 
-#### Procedures
+| Attribute | Description |
+|-|-|
+|`code`   | Subdivision code.               |
+|`name`   | Name of the subdivision.        |
+|`type`   | Type of the subdivision. **NOTE**: use [stropping](https://en.wikipedia.org/wiki/Nim_%28programming_language%29#Stropping) to access this field because type is a reserved word. Example: ``echo subdivision.`type` ``|
+|`parent` | country ISO code (2 characters).|
+
+#### CountrySubdivision Procedures
 
 | Procedure | Description |
 |-|-|
@@ -92,7 +106,9 @@ The following attributes are available for each `Country` instance:
 
 ## Compilation flags
 
-With the following flags it's possible to embed the data (or not) and specify the JSON file to embed/load. This could be useful if the provided files are outdated and you want to provide your own files. See 
+With the following flags it's possible to embed the data (or not) and specify the JSON 
+file to embed/load. This could be useful if the provided files are outdated and you want
+to provide your own files.
 
 | flag | comment |
 |-|-|
@@ -105,6 +121,7 @@ With the following flags it's possible to embed the data (or not) and specify th
 
 ## Source
 
-The ISO codes JSON files are synced verbatim from Debian's iso-codes-repository here:
+The ISO codes JSON files are synced verbatim from Debian's `iso-codes`
+repository here:
 
 - https://salsa.debian.org/iso-codes-team/iso-codes/
