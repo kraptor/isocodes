@@ -5,6 +5,8 @@
  https://opensource.org/licenses/MIT
 -->
 
+[![made-with-nim](https://img.shields.io/badge/Made%20with-Nim-ffc200.svg)](https://nim-lang.org/) ![Build](https://github.com/kraptor/isocodes/workflows/Build/badge.svg)
+
 # `isocodes`
 
 ISO codes for Nim that allows to embed the data within the executable (or load 
@@ -13,7 +15,6 @@ it automatically at runtime).
 Provides the utility `isocodes_download` to download latest JSON packages when
 you don't want to use the provided ones (or if they become obsolete).
 
-[![made-with-nim](https://img.shields.io/badge/Made%20with-Nim-ffc200.svg)](https://nim-lang.org/) ![Build](https://github.com/kraptor/isocodes/workflows/Build/badge.svg)
 
 ## Supported ISO standards
 
@@ -81,8 +82,8 @@ The following attributes are available for each `Country` instance:
 |-|-|
 |`code`   | Subdivision code.               |
 |`name`   | Name of the subdivision.        |
-|`type`   | Type of the subdivision. **NOTE**: use [stropping](https://en.wikipedia.org/wiki/Nim_%28programming_language%29#Stropping) to access this field because type is a reserved word. Example: ``echo subdivision.`type` ``|
-|`parent` | country ISO code (2 characters).|
+|`type`   | Type of the subdivision.<br />**NOTE**: use [stropping](https://en.wikipedia.org/wiki/Nim_%28programming_language%29#Stropping) to access this field because type is a reserved word.<br />Example: ``echo subdivision.`type` ``.|
+|`parent` | Parent code.|
 
 #### CountrySubdivision Procedures
 
