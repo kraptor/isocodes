@@ -5,11 +5,11 @@
  https://opensource.org/licenses/MIT
 -->
 
-# `iso_codes`
+# `isocodes`
 
 Easy to use ISO codes for Nim, which allows to embed the data within the executable (or load it automatically at runtime).
 
-[![made-with-nim](https://img.shields.io/badge/Made%20with-Nim-ffc200.svg)](https://nim-lang.org/) ![Build](https://github.com/kraptor/iso_codes/workflows/Build/badge.svg)
+[![made-with-nim](https://img.shields.io/badge/Made%20with-Nim-ffc200.svg)](https://nim-lang.org/) ![Build](https://github.com/kraptor/isocodes/workflows/Build/badge.svg)
 
 ## Supported ISO standards
 
@@ -19,7 +19,7 @@ Easy to use ISO codes for Nim, which allows to embed the data within the executa
 ## Example
 
 ```nim
-    import iso_codes
+    import isocodes
 
     if isMainModule:
         for c in Country.allIt():

@@ -13,7 +13,7 @@
 import unittest
 import strutils
 
-import iso_codes
+import isocodes
 
 
 const 

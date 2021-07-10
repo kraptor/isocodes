@@ -7,7 +7,7 @@ import strformat
 import httpclient
 
 const 
-    RESOURCES_FOLDER = joinPath("src", "iso_codes", "resources")
+    RESOURCES_FOLDER = joinPath("src", "isocodes", "resources")
     RESOURCES = [
         ("Countries", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_3166-1.json"),
         ("Country Subdivisions", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_3166-2.json")

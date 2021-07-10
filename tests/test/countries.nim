@@ -6,7 +6,7 @@
 {.warning[UnusedImport]: off.}
 
 import unittest
-import iso_codes
+import isocodes
 import strutils
 
 

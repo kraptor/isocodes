@@ -3,7 +3,7 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-import iso_codes
+import isocodes
 
 if isMainModule:
     for s in CountrySubdivision.allIt():

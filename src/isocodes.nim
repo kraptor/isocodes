@@ -3,10 +3,10 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-import iso_codes/countries
+import isocodes/countries
 export countries
 
-import iso_codes/subdivisions
+import isocodes/subdivisions
 export subdivisions
 
 
