@@ -1,12 +1,12 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.2.0"
 author        = "kraptor"
 description   = "ISO codes for Nim"
 license       = "MIT"
 srcDir        = "src"
-binDir = "bin"
-bin = @["iso_update_resources"]
+binDir        = "bin"
+bin           = @["iso_update_resources"]
 
 # Dependencies
 
