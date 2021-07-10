@@ -14,5 +14,13 @@ requires "nim >= 1.4.0"
 requires "jsony >= 1.0.3"
 
 
-task clean, "Clean build artifacts":
+proc clean_artifacts() =
     rmDir binDir
+
+task clean, "Clean build artifacts":
+    clean_artifacts()
+
+task update_codes, "Update ISO codes from source repository":
+    exec "nimble build"
+    exec "bin/iso_update_resources"
+    clean_artifacts()
