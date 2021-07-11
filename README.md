@@ -89,21 +89,23 @@ The following attributes are available for each `Country` instance:
 
 | Procedure | Description |
 |-|-|
-|`.count()`            | Number of subdivisions                                      |
-|`.all()`              | `seq` for all subdivisions.                                 |
-|`.allIt()`            | Iterator for all subdivisions.                              |
-|`.byCode(str)`        | `seq` for subdivisions by specified code.                   |
-|`.byCodeIt(str)`      | Iterator for subdivisions specified by code.                |
-|`.byCodeStart(str)`   | `seq` for subdivisions where code starts by a value.        |
-|`.byCodeStartIt(str)` | Iterator subdivisions where code starts by a value.         |
-|`.byName(str)`        | `seq` for subdivisions with specified name.                 |
-|`.byNameIt(str)`      | Iterator for subdivisions with specified name.              |
-|`.byType(str)`        | `seq` for subdivisions with the specified type.             |
-|`.byTypeIt(str)`      | Iterator for subdivisions with the specified type.          |
-|`.byParent(str)`      | `seq` for subdivisions with the specified parent value.     |
-|`.byParentIt(str)`    | Iterator for subdivisions with the specified parent value.  |
-|`.findIt(proc)`       | Iterator for all subdivisions that proc evaluates to `true`.|
-|`.findFirst(proc)`    | `Option[CountrySubdivision]` were proc evaluates to `true`. |
+|`.count()`             | Number of subdivisions                                      |
+|`.all()`               | `seq` for all subdivisions.                                 |
+|`.allIt()`             | Iterator for all subdivisions.                              |
+|`.byCountryCode(str)`  | `seq` for subdivisions for an specific country code.        |
+|`.byCountryCodeIt(str)`| Iterator for subdivisions for an specific country code.     |
+|`.byCode(str)`         | `seq` for subdivisions by specified code.                   |
+|`.byCodeIt(str)`       | Iterator for subdivisions specified by code.                |
+|`.byCodeStart(str)`    | `seq` for subdivisions where code starts by a value.        |
+|`.byCodeStartIt(str)`  | Iterator subdivisions where code starts by a value.         |
+|`.byName(str)`         | `seq` for subdivisions with specified name.                 |
+|`.byNameIt(str)`       | Iterator for subdivisions with specified name.              |
+|`.byType(str)`         | `seq` for subdivisions with the specified type.             |
+|`.byTypeIt(str)`       | Iterator for subdivisions with the specified type.          |
+|`.byParent(str)`       | `seq` for subdivisions with the specified parent value.     |
+|`.byParentIt(str)`     | Iterator for subdivisions with the specified parent value.  |
+|`.findIt(proc)`        | Iterator for all subdivisions that proc evaluates to `true`.|
+|`.findFirst(proc)`     | `Option[CountrySubdivision]` were proc evaluates to `true`. |
 
 ## Compilation flags
 

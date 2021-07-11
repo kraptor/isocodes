@@ -55,6 +55,19 @@ suite suiteNameSubdivisions:
         for item in CountrySubdivision.byCodeStartIt("AL"):
             check item.code.startsWith("AL")
 
+    test "Find by country code":
+        let found = CountrySubdivision.byCountryCode("GB")
+        check found.len > 0
+        for item in found:
+            check item.code.split("-")[0] == "GB"
+
+    test "Find by country code (iterator)":
+        var found = false
+        for item in CountrySubdivision.byCountryCodeIt("GB"):
+            check item.code.split("-")[0] == "GB"
+            found = true
+        check found
+
     test "Find by name (seq)":
         let found = CountrySubdivision.byName("Berat")
         check found.len > 0

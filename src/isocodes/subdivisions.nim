@@ -44,7 +44,7 @@ proc all*(T: type CountrySubdivision): seq[CountrySubdivision] =
     return data.objects
 
 
-proc allIt*(T: type CountrySubdivision): seq[CountrySubdivision] =
+iterator allIt*(T: type CountrySubdivision): CountrySubdivision =
     for c in data.objects:
         yield c
 
@@ -53,6 +53,18 @@ proc byCode*(T: type CountrySubdivision, code: string): Option[CountrySubdivisio
     for c in data.objects:
         if c.code == code:
             return some(c)
+
+
+proc byCountryCode*(T: type CountrySubdivision, country_code: string): seq[CountrySubdivision] =
+    for c in data.objects:
+        if c.code.split("-")[0] == country_code:
+            result.add(c)
+
+
+iterator byCountryCodeIt*(T: type CountrySubdivision, country_code: string): CountrySubdivision =
+    for c in data.objects:
+        if c.code.split("-")[0] == country_code:
+            yield c
 
 
 proc byCodeStart*(T: type CountrySubdivision, code_start: string): seq[CountrySubdivision] =
@@ -97,7 +109,7 @@ proc byParent*(T: type CountrySubdivision, parent: string): seq[CountrySubdivisi
             result.add(c)
 
 
-proc byParentIt*(T: type CountrySubdivision, parent: string): CountrySubdivision =
+iterator byParentIt*(T: type CountrySubdivision, parent: string): CountrySubdivision =
     for c in data.objects:
         if c.parent == parent:
             yield c
