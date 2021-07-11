@@ -152,15 +152,15 @@ to provide your own files.
 
 | flag | comment |
 |-|-|
-|`-d:embedCountries=true`        | Embed countries data within the executable.       |
-|`-d:embedCountries=false`       | Load countries data at runtime.                   |
-|`-d:embedSubdivisions=true`     | Embed subdivisions data within the executable.    |
-|`-d:embedSubdivisions=false`    | Load subdivisions data at runtime.                |
-|`-d:embedFormerCountries=true`  | Embed former countries data within the executable.|
-|`-d:embedFormerCountries=false` | Load former countries data at runtime.            |
-|`-d:useCountriesFile=PATH`      | Use a specific countries JSON file.               |
-|`-d:useSubdivisionsFile=PATH`   | Use a specific subdivisions JSON file.            |
-|`-d:useFormerCountriesFile=PATH`| Use a specific subdivisions JSON file.            |
+|`-d:embedCountries=true`         | Embed countries data within the executable.        |
+|`-d:embedCountries=false`        | Load countries data at runtime.                    |
+|`-d:embedSubdivisions=true`      | Embed subdivisions data within the executable.     |
+|`-d:embedSubdivisions=false`     | Load subdivisions data at runtime.                 |
+|`-d:embedRemovedCountries=true`  | Embed removed countries data within the executable.|
+|`-d:embedRemovedCountries=false` | Load removed countries data at runtime.            |
+|`-d:useCountriesFile=PATH`       | Use a specific countries JSON file.                |
+|`-d:useSubdivisionsFile=PATH`    | Use a specific subdivisions JSON file.             |
+|`-d:useRemovedCountriesFile=PATH`| Use a specific subdivisions JSON file.             |
 
 ## Source
 

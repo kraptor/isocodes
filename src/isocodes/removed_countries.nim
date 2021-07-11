@@ -17,26 +17,26 @@ type
         comment*: string
         withdrawal_date*: string
 
-    FormerCountries* = object
+    RemovedCountries* = object
         objects: seq[RemovedCountry]
 
     FindRemovedCountryPredicateProc* = proc(c: RemovedCountry): bool
 
 
-proc renameHook*(v: var FormerCountries, fieldname: var string) =
+proc renameHook*(v: var RemovedCountries, fieldname: var string) =
     if fieldname == "3166-3":
         fieldname = "objects"
 
 
 const
-    embedFormerCountries   {.booldefine.} = true
-    useFormerCountriesFile {.strdefine.}  = "resources/iso_3166-3.json"
+    embedRemovedCountries   {.booldefine.} = true
+    useRemovedCountriesFile {.strdefine.}  = "resources/iso_3166-3.json"
 
 
-when embedFormerCountries:
-    const data = fromJson(staticRead useFormerCountriesFile, FormerCountries)
-when not embedFormerCountries:
-    let data = fromJson(readFile useFormerCountriesFile, FormerCountries)
+when embedRemovedCountries:
+    const data = fromJson(staticRead useRemovedCountriesFile, RemovedCountries)
+when not embedRemovedCountries:
+    let data = fromJson(readFile useRemovedCountriesFile, RemovedCountries)
 
 
 proc count*(T: type RemovedCountry): Natural = 
