@@ -2,7 +2,7 @@
 
 version       = "1.0.0"
 author        = "kraptor"
-description   = "ISO codes for Nim"
+description   = "ISO codes for Nim that allows to embed the data within the executable (or load it automatically at runtime)."
 license       = "MIT"
 srcDir        = "src"
 binDir        = "bin"
