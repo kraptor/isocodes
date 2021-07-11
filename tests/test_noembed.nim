@@ -7,3 +7,4 @@ import unittest
 
 include test_countries
 include test_subdivisions
+include test_removed_countries

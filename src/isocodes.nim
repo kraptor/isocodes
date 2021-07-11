@@ -9,4 +9,5 @@ export countries
 import isocodes/subdivisions
 export subdivisions
 
-
+import isocodes/removed_countries
+export removed_countries

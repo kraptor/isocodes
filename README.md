@@ -20,6 +20,7 @@ you don't want to use the provided ones (or if they become obsolete).
 
 - ISO 3166-1 (countries)
 - ISO 3166-2 (country subdivisions)
+- ISO 3166-3 (removed countries)
 
 ## Example
 
@@ -107,20 +108,59 @@ The following attributes are available for each `Country` instance:
 |`.findIt(proc)`        | Iterator for all subdivisions that proc evaluates to `true`.|
 |`.findFirst(proc)`     | `Option[CountrySubdivision]` were proc evaluates to `true`. |
 
+## RemovedCountry API
+
+#### RemovedCountry Attributes
+
+| Attribute | Description |
+|-|-|
+|`name`           | country name.                    |
+|`official_name`  | official name of the country.    |
+|`alpha_2`        | country ISO code (2 characters). |
+|`alpha_3`        | country ISO code (3 characters). |
+|`alpha_4`        | country ISO code (4 characters). |
+|`numeric`        | numeric code for the country. <br/> **NOTE**: this is a string.|
+|`comment`        | comment about the country.       |
+|`withdrawal_date`| date of withdrawal (format: YYYY or YYYY-MM-DD) <br/> **NOTE**: this is a string.|
+
+#### RemovedCountry Procedures
+
+| Procedure | Description |
+|-|-|
+|`.count()`               | Number of countries                                      |
+|`.all()`                 | `seq` for all countries.                                 |
+|`.allIt()`               | Iterator for all countries.                              |
+|`.byName(str)`           | `Option[Country]` with the specified name.               |
+|`.byAlpha2(str)`         | `Option[Country]` with the specified alpha2 code.        |
+|`.byAlpha3(str)`         | `Option[Country]` with the specified alpha3 code.        |
+|`.byAlpha4(str)`         | `Option[Country]` with the specified alpha4 code.        |
+|`.byNumeric(str)`        | `Option[Country]` with the specified numeric code.       |
+|`.byNumeric(str)`        | `Option[Country]` with the specified numeric code.       |
+|`byWithdrawalDate(str)`  | `seq` for all countries with specified date.             |
+|`byWithdrawalDateIt(str)`| Iterator all countries with specified date.              |
+|`byWithdrawalYear(str)`  | `seq` for all countries with specified year.             |
+|`byWithdrawalYearIt(str)`| Iterator all countries with specified year.              |
+|`.find(proc)`            | `seq` for all countries that proc evaluates to `true`.   |
+|`.findIt(proc)`          | Iterator for all countries that proc evaluates to `true`.|
+|`.findFirst(proc)`       | `Option[Country]` were proc evaluates to `true`.         |
+
 ## Compilation flags
 
-With the following flags it's possible to embed the data (or not) and specify the JSON 
+With the following flags it's possible to embed the data (or not) and specify the JSON
 file to embed/load. This could be useful if the provided files are outdated and you want
 to provide your own files.
 
 | flag | comment |
 |-|-|
-|`-d:embedCountries=true`     | Embed the countries data within the executable.   |
-|`-d:embedCountries=false`    | Load the countries data at runtime.               |
-|`-d:embedSubdivisions=true`  | Embed the subdivisions data within the executable.|
-|`-d:embedSubdivisions=false` | Load the subdivisions data at runtime.            |
-|`-d:useCountriesFile=PATH`   | Use a specific countries JSON file.               |
-|`-d:useSubdivisionsFile=PATH`| Use a specific subdivisions JSON file.            |
+|`-d:embedCountries=true`        | Embed countries data within the executable.       |
+|`-d:embedCountries=false`       | Load countries data at runtime.                   |
+|`-d:embedSubdivisions=true`     | Embed subdivisions data within the executable.    |
+|`-d:embedSubdivisions=false`    | Load subdivisions data at runtime.                |
+|`-d:embedFormerCountries=true`  | Embed former countries data within the executable.|
+|`-d:embedFormerCountries=false` | Load former countries data at runtime.            |
+|`-d:useCountriesFile=PATH`      | Use a specific countries JSON file.               |
+|`-d:useSubdivisionsFile=PATH`   | Use a specific subdivisions JSON file.            |
+|`-d:useFormerCountriesFile=PATH`| Use a specific subdivisions JSON file.            |
 
 ## Source
 

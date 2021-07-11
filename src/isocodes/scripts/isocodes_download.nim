@@ -8,8 +8,9 @@ import httpclient
 
 const 
     RESOURCES = [
-        ("Countries", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_3166-1.json"),
-        ("Country Subdivisions", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_3166-2.json")
+        ("ISO 3166-1 - Countries", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_3166-1.json"),
+        ("ISO 3166-2 - Country Subdivisions", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_3166-2.json"),
+        ("ISO 3166-3 - Removed Countries", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_3166-3.json")
     ]
 
 

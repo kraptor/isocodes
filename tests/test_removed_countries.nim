@@ -5,4 +5,4 @@
 
 import unittest
 
-include ../tests/test/subdivisions
+include ../tests/test/removed_countries
