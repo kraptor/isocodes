@@ -17,7 +17,6 @@ skipDirs = @["isocodes/scripts"]
 
 requires "nim >= 1.4.0"
 requires "jsony >= 1.0.3"
-requires "https://github.com/disruptek/bump"
 
 task update_codes, "Update ISO codes from source repository":
     exec "nim r src/isocodes/scripts/isocodes_download src/isocodes/resources/"
