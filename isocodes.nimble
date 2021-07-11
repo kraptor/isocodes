@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.3.1"
+version       = "1.0.0"
 author        = "kraptor"
 description   = "ISO codes for Nim"
 license       = "MIT"
