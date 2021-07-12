@@ -7,6 +7,9 @@ import jsony
 import options
 export options
 
+import private/utils
+
+
 type
     RemovedCountry* = object
         name*: string
@@ -39,59 +42,19 @@ when not embedRemovedCountries:
     let data = fromJson(readFile useRemovedCountriesFile, RemovedCountries)
 
 
-proc count*(T: type RemovedCountry): Natural = 
-    return data.objects.len()
-
-
-proc all*(T: type RemovedCountry): seq[RemovedCountry] =
-    return data.objects
-
-
-iterator allIt*(T: type RemovedCountry): RemovedCountry =
-    for c in data.objects:
-        yield c
-
-
-proc byName*(T: type RemovedCountry, name: string): Option[RemovedCountry] =
-    for c in data.objects:
-        if c.name == name:
-            return some(c)
-
-
-proc byAlpha2*(T: type RemovedCountry, value: string): Option[RemovedCountry] =
-    for c in data.objects:
-        if c.alpha_2 == value:
-            return some(c)
-
-
-proc byAlpha3*(T: type RemovedCountry, value: string): Option[RemovedCountry] =
-    for c in data.objects:
-        if c.alpha_3 == value:
-            return some(c)
-
-
-proc byAlpha4*(T: type RemovedCountry, value: string): Option[RemovedCountry] =
-    for c in data.objects:
-        if c.alpha_4 == value:
-            return some(c)
-
-
-proc byNumeric*(T: type RemovedCountry, value: string): Option[RemovedCountry] =
-    for c in data.objects:
-        if c.numeric == value:
-            return some(c)
-
-
-proc byWithdrawalDate*(T: type RemovedCountry, value: string): seq[RemovedCountry] =
-    for c in data.objects:
-        if c.withdrawal_date == value:
-            result.add(c)
-
-
-iterator byWithdrawalDateIt*(T: type RemovedCountry, value: string): RemovedCountry =
-    for c in data.objects:
-        if c.withdrawal_date == value:
-            yield c
+declareCount     RemovedCountry, data.objects, count
+declareAll       RemovedCountry, data.objects, all
+declareAllIt     RemovedCountry, data.objects, allIt
+declareOpt       RemovedCountry, data.objects, byName, name
+declareOpt       RemovedCountry, data.objects, byAlpha2, alpha_2
+declareOpt       RemovedCountry, data.objects, byAlpha3, alpha_3
+declareOpt       RemovedCountry, data.objects, byAlpha4, alpha_4
+declareOpt       RemovedCountry, data.objects, byNumeric, numeric
+declareSeq       RemovedCountry, data.objects, byWithdrawalDate, withdrawal_date
+declareIt        RemovedCountry, data.objects, byWithdrawalDateIt, withdrawal_date
+declareFind      RemovedCountry, data.objects, find, FindRemovedCountryPredicateProc
+declareFindIt    RemovedCountry, data.objects, findIt, FindRemovedCountryPredicateProc
+declareFindFirst RemovedCountry, data.objects, findFirst, FindRemovedCountryPredicateProc
 
 
 proc byWithdrawalYear*(T: type RemovedCountry, year: string): seq[RemovedCountry] =
@@ -106,21 +69,3 @@ iterator byWithdrawalYearIt*(T: type RemovedCountry, year: string): RemovedCount
         let wd = c.withdrawal_date
         if wd.len >= 4 and wd[0 .. 3] == year:
             yield c
-
-
-proc find*(T: type RemovedCountry, predicate: FindRemovedCountryPredicateProc): seq[RemovedCountry] =
-    for item in data.objects:
-        if predicate(item):
-            result.add(item)
-
-
-iterator findIt*(t: type RemovedCountry, predicate: FindRemovedCountryPredicateProc): RemovedCountry =
-    for item in data.objects:
-        if predicate(item):
-            yield item
-
-
-proc findFirst*[T: RemovedCountry](t: type T, predicate: FindRemovedCountryPredicateProc): Option[T] =
-    for item in data.objects:
-        if predicate(item):
-            return some(item)

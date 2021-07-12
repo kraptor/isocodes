@@ -1,5 +1,5 @@
 # Copyright (c) 2021 kraptor
-# 
+#
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
@@ -7,11 +7,13 @@ import jsony
 import options
 export options
 
+import private/utils
+
 type
     CountrySubdivision* = object
         code*: string
         name*: string
-        `type`*: string 
+        `type`*: string
         parent*: string # optional
 
     CountrySubdivisions* = object
@@ -27,7 +29,7 @@ proc renameHook*(v: var CountrySubdivisions, fieldname: var string) =
 
 const
     embedSubdivisions {.booldefine.} = true
-    useSubdivisionsFile {.strdefine.}  = "resources/iso_3166-2.json"    
+    useSubdivisionsFile {.strdefine.}  = "resources/iso_3166-2.json"
 
 
 when embedSubdivisions:
@@ -36,23 +38,18 @@ when not embedSubdivisions:
     let data = fromJson(readFile useSubdivisionsFile, CountrySubdivisions)
 
 
-proc count*(T: type CountrySubdivision): Natural = 
-    return data.objects.len()
-
-
-proc all*(T: type CountrySubdivision): seq[CountrySubdivision] =
-    return data.objects
-
-
-iterator allIt*(T: type CountrySubdivision): CountrySubdivision =
-    for c in data.objects:
-        yield c
-
-
-proc byCode*(T: type CountrySubdivision, code: string): Option[CountrySubdivision] =
-    for c in data.objects:
-        if c.code == code:
-            return some(c)
+declareCount  CountrySubdivision, data.objects, count
+declareAll    CountrySubdivision, data.objects, all
+declareAllIt  CountrySubdivision, data.objects, allIt
+declareOpt    CountrySubdivision, data.objects, byCode, code
+declareSeq    CountrySubdivision, data.objects, byName, name
+declareIt     CountrySubdivision, data.objects, byNameIt, name
+declareSeq    CountrySubdivision, data.objects, byType, `type`
+declareIt     CountrySubdivision, data.objects, byTypeIt, `type`
+declareSeq    CountrySubdivision, data.objects, byParent, parent
+declareIt     CountrySubdivision, data.objects, byParentIt, parent
+declareFind   CountrySubdivision, data.objects, find, FindCountrySubdivisionPredicateProc
+declareFindIt CountrySubdivision, data.objects, findIt, FindCountrySubdivisionPredicateProc
 
 
 proc byCountryCode*(T: type CountrySubdivision, country_code: string): seq[CountrySubdivision] =
@@ -77,51 +74,3 @@ iterator byCodeStartIt*(T: type CountrySubdivision, code_start: string): Country
     for c in data.objects:
         if c.code.startsWith(code_start):
             yield c
-
-
-proc byName*(T: type CountrySubdivision, name: string): seq[CountrySubdivision] =
-    for c in data.objects:
-        if c.name == name:
-            result.add(c)
-
-
-iterator byNameIt*(T: type CountrySubdivision, name: string): CountrySubdivision =
-    for c in data.objects:
-        if c.name == name:
-            yield c
-
-
-proc byType*(T: type CountrySubdivision, `type`: string): seq[CountrySubdivision] =
-    for c in data.objects:
-        if c.`type` == `type`:
-            result.add(c)
-
-
-iterator byTypeIt*(T: type CountrySubdivision, `type`: string): CountrySubdivision =
-    for c in data.objects:
-        if c.`type` == `type`:
-            yield c
-
-
-proc byParent*(T: type CountrySubdivision, parent: string): seq[CountrySubdivision] =
-    for c in data.objects:
-        if c.parent == parent:
-            result.add(c)
-
-
-iterator byParentIt*(T: type CountrySubdivision, parent: string): CountrySubdivision =
-    for c in data.objects:
-        if c.parent == parent:
-            yield c
-
-
-iterator findIt*(t: type CountrySubdivision, predicate: FindCountrySubdivisionPredicateProc): CountrySubdivision =
-    for item in data.objects:
-        if predicate(item):
-            yield item
-
-
-proc findFirst*(t: type CountrySubdivision, predicate: FindCountrySubdivisionPredicateProc): Option[CountrySubdivision] =
-    for item in data.objects:
-        if predicate(item):
-            return some(item)
