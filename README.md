@@ -136,10 +136,10 @@ The following attributes are available for each `Country` instance:
 |`.byAlpha4(str)`         | `Option[Country]` with the specified alpha4 code.        |
 |`.byNumeric(str)`        | `Option[Country]` with the specified numeric code.       |
 |`.byNumeric(str)`        | `Option[Country]` with the specified numeric code.       |
-|`byWithdrawalDate(str)`  | `seq` for all countries with specified date.             |
-|`byWithdrawalDateIt(str)`| Iterator all countries with specified date.              |
-|`byWithdrawalYear(str)`  | `seq` for all countries with specified year.             |
-|`byWithdrawalYearIt(str)`| Iterator all countries with specified year.              |
+|`.byWithdrawalDate(str)`  | `seq` for all countries with specified date.             |
+|`.byWithdrawalDateIt(str)`| Iterator all countries with specified date.              |
+|`.byWithdrawalYear(str)`  | `seq` for all countries with specified year.             |
+|`.byWithdrawalYearIt(str)`| Iterator all countries with specified year.              |
 |`.find(proc)`            | `seq` for all countries that proc evaluates to `true`.   |
 |`.findIt(proc)`          | Iterator for all countries that proc evaluates to `true`.|
 |`.findFirst(proc)`       | `Option[Country]` were proc evaluates to `true`.         |
