@@ -21,6 +21,7 @@ you don't want to use the provided ones (or if they become obsolete).
 - ISO 3166-1 (countries)
 - ISO 3166-2 (country subdivisions)
 - ISO 3166-3 (removed countries)
+- ISO 15924 (scripts)
 
 ## Example
 
@@ -108,7 +109,7 @@ The following attributes are available for each `Country` instance:
 |`.findIt(proc)`        | Iterator for all subdivisions that proc evaluates to `true`.|
 |`.findFirst(proc)`     | `Option[CountrySubdivision]` were proc evaluates to `true`. |
 
-## RemovedCountry API
+### RemovedCountry API
 
 #### RemovedCountry Attributes
 
@@ -127,40 +128,70 @@ The following attributes are available for each `Country` instance:
 
 | Procedure | Description |
 |-|-|
-|`.count()`               | Number of countries                                      |
-|`.all()`                 | `seq` for all countries.                                 |
-|`.allIt()`               | Iterator for all countries.                              |
-|`.byName(str)`           | `Option[Country]` with the specified name.               |
-|`.byAlpha2(str)`         | `Option[Country]` with the specified alpha2 code.        |
-|`.byAlpha3(str)`         | `Option[Country]` with the specified alpha3 code.        |
-|`.byAlpha4(str)`         | `Option[Country]` with the specified alpha4 code.        |
-|`.byNumeric(str)`        | `Option[Country]` with the specified numeric code.       |
-|`.byNumeric(str)`        | `Option[Country]` with the specified numeric code.       |
+|`.count()`                | Number of countries                                      |
+|`.all()`                  | `seq` for all countries.                                 |
+|`.allIt()`                | Iterator for all countries.                              |
+|`.byName(str)`            | `Option[Country]` with the specified name.               |
+|`.byAlpha2(str)`          | `Option[Country]` with the specified alpha2 code.        |
+|`.byAlpha3(str)`          | `Option[Country]` with the specified alpha3 code.        |
+|`.byAlpha4(str)`          | `Option[Country]` with the specified alpha4 code.        |
+|`.byNumeric(str)`         | `Option[Country]` with the specified numeric code.       |
 |`.byWithdrawalDate(str)`  | `seq` for all countries with specified date.             |
 |`.byWithdrawalDateIt(str)`| Iterator all countries with specified date.              |
 |`.byWithdrawalYear(str)`  | `seq` for all countries with specified year.             |
 |`.byWithdrawalYearIt(str)`| Iterator all countries with specified year.              |
-|`.find(proc)`            | `seq` for all countries that proc evaluates to `true`.   |
-|`.findIt(proc)`          | Iterator for all countries that proc evaluates to `true`.|
-|`.findFirst(proc)`       | `Option[Country]` were proc evaluates to `true`.         |
+|`.find(proc)`             | `seq` for all countries that proc evaluates to `true`.   |
+|`.findIt(proc)`           | Iterator for all countries that proc evaluates to `true`.|
+|`.findFirst(proc)`        | `Option[Country]` were proc evaluates to `true`.         |
+
+### Script API
+
+#### Script Attributes
+
+| Attribute | Description |
+|-|-|
+|`name`           | script name.                    |
+|`alpha_4`        | script ISO code (4 characters). |
+|`numeric`        | numeric code for the script. <br/> **NOTE**: this is a string.|
+
+#### Script Procedures
+
+| Procedure | Description |
+|-|-|
+|`.count()`        | Number of scripts                                       |
+|`.all()`          | `seq` for all scripts.                                  |
+|`.allIt()`        | Iterator for all scripts.                               |
+|`.byName(str)`    | `Option[Script]` with the specified name.               |
+|`.byAlpha4(str)`  | `Option[Script]` with the specified alpha4 code.        |
+|`.byNumeric(str)` | `Option[Script]` with the specified numeric code.       |
+|`.find(proc)`     | `seq` for all scripts that proc evaluates to `true`.    |
+|`.findIt(proc)`   | Iterator for all scripts that proc evaluates to `true`. |
+|`.findFirst(proc)`| `Option[Script]` were proc evaluates to `true`.         |
 
 ## Compilation flags
 
 With the following flags it's possible to embed the data (or not) and specify the JSON
 file to embed/load. This could be useful if the provided files are outdated and you want
-to provide your own files.
+to provide your own files, or if you want to load the data at runtime.
 
-| flag | comment |
+| Flag | Comment |
 |-|-|
+| **Countries**
 |`-d:embedCountries=true`         | Embed countries data within the executable.        |
 |`-d:embedCountries=false`        | Load countries data at runtime.                    |
+|`-d:useCountriesFile=PATH`       | Use a specific countries JSON file.                |
+| **Country Subdivisions**
 |`-d:embedSubdivisions=true`      | Embed subdivisions data within the executable.     |
 |`-d:embedSubdivisions=false`     | Load subdivisions data at runtime.                 |
+|`-d:useSubdivisionsFile=PATH`    | Use a specific subdivisions JSON file.             |
+| **Removed Countries**
 |`-d:embedRemovedCountries=true`  | Embed removed countries data within the executable.|
 |`-d:embedRemovedCountries=false` | Load removed countries data at runtime.            |
-|`-d:useCountriesFile=PATH`       | Use a specific countries JSON file.                |
-|`-d:useSubdivisionsFile=PATH`    | Use a specific subdivisions JSON file.             |
-|`-d:useRemovedCountriesFile=PATH`| Use a specific subdivisions JSON file.             |
+|`-d:useRemovedCountriesFile=PATH`| Use a specific removed countries JSON file.        |
+| **Scripts**
+|`-d:embedScripts=true`  | Embed removed scripts data within the executable.|
+|`-d:embedScripts=false` | Load removed scripts data at runtime.            |
+|`-d:useScriptsFile=PATH`| Use a specific scripts JSON file.                |
 
 ## Source
 
