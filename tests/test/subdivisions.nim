@@ -21,7 +21,7 @@ const
     TOTAL_SUBDIVISIONS = 4883
 
     suiteNameSubdivisions = when 
-        defined(embedNameSubdivisions):
+        defined(embedSubdivisions):
             "Country subdivisions (embedded data)"
         else:
             "Country subdivisions"

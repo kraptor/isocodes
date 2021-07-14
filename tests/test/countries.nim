@@ -6,8 +6,10 @@
 {.warning[UnusedImport]: off.}
 
 import unittest
-import isocodes
 import strutils
+import options
+
+import isocodes
 
 
 const 
