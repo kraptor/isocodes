@@ -57,7 +57,7 @@ macro declareFind*(T: type, data: untyped, procname: untyped, ProcType: type) =
 
 macro declareFindIt*(T: type, data: untyped, procname: untyped, ProcType: type) =
     quote do:
-        iterator `procname`*(U: type `T`, predicate: `ProcType`): seq[`T`] =
+        iterator `procname`*(U: type `T`, predicate: `ProcType`): `T` =
             for x in `data`:
                 if predicate(x):
                     yield x
