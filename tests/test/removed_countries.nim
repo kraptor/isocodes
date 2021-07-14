@@ -6,15 +6,17 @@
 {.warning[UnusedImport]: off.}
 
 import unittest
-import isocodes
 import strutils
+import options
+
+import isocodes
 
 
 const 
     TOTAL_REMOVED_COUNTRIES = 31
 
     suiteNameRemovedCountries = when 
-        defined(embedCountries):
+        defined(embedRemovedCountries):
             "Removed Countries (embedded data)"
         else:
             "Removed Countries"
