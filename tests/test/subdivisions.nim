@@ -12,6 +12,7 @@
 
 import unittest
 import strutils
+import options
 
 import isocodes
 
@@ -20,7 +21,7 @@ const
     TOTAL_SUBDIVISIONS = 4883
 
     suiteNameSubdivisions = when 
-        defined(embedCountries):
+        defined(embedNameSubdivisions):
             "Country subdivisions (embedded data)"
         else:
             "Country subdivisions"
