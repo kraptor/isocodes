@@ -1,6 +1,6 @@
 # Package
 
-version       = "1.1.5"
+version       = "1.2.0"
 author        = "kraptor"
 description   = "ISO codes for Nim that allows to embed the data within the executable (or load it automatically at runtime)."
 license       = "MIT"
