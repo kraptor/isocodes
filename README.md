@@ -15,7 +15,6 @@ them automatically at runtime).
 Provides the utility `isocodes_download` to download latest JSON packages when
 you don't want to use the provided ones (or if they become obsolete).
 
-
 ## Supported ISO standards
 
 - ISO 3166-1 (countries)
@@ -189,8 +188,8 @@ to provide your own files, or if you want to load the data at runtime.
 |`-d:embedRemovedCountries=false` | Load removed countries data at runtime.            |
 |`-d:useRemovedCountriesFile=PATH`| Use a specific removed countries JSON file.        |
 | **Scripts**
-|`-d:embedScripts=true`  | Embed removed scripts data within the executable.|
-|`-d:embedScripts=false` | Load removed scripts data at runtime.            |
+|`-d:embedScripts=true`  | Embed scripts data within the executable.|
+|`-d:embedScripts=false` | Load scripts data at runtime.            |
 |`-d:useScriptsFile=PATH`| Use a specific scripts JSON file.                |
 
 ## Source
@@ -198,4 +197,4 @@ to provide your own files, or if you want to load the data at runtime.
 The ISO codes JSON files are synced verbatim from Debian's `iso-codes`
 repository here:
 
-- https://salsa.debian.org/iso-codes-team/iso-codes/
+- <https://salsa.debian.org/iso-codes-team/iso-codes/>
