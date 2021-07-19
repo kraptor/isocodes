@@ -99,6 +99,13 @@ suite suiteNameRemovedCountries:
         check found.len > 0
         for c in found:
             check c.name.startsWith("B")
+
+    test "Find by predicate (iterator)":
+        var found = false
+        for c in RemovedCountry.find(firstCharInNameIsB):
+            check c.name.startsWith("B")
+            found = true
+        check found == true
         
     test "Find by predicate (first)":
         let found = RemovedCountry.findFirst(firstCharInNameIsB)

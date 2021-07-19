@@ -27,6 +27,10 @@ const
             "Country subdivisions"
 
 
+proc firstCharInNameIsE(c: CountrySubdivision): bool =
+    c.name.startsWith("E")
+
+
 suite suiteNameSubdivisions:
     test "Can get count":
         check CountrySubdivision.count() == TOTAL_SUBDIVISIONS
@@ -107,3 +111,22 @@ suite suiteNameSubdivisions:
             check item.parent == "01"
             found = true
         check found
+
+    test "Find by predicate (all)":
+        var found = false
+        for c in CountrySubdivision.findIt(firstCharInNameIsE):
+            check c.name.startsWith("E")
+            found = true
+        check found
+
+    test "Find by predicate (iterator)":
+        var found = false
+        for c in CountrySubdivision.find(firstCharInNameIsE):
+            check c.name.startsWith("E")
+            found = true
+        check found == true
+        
+    test "Find by predicate (first)":
+        let found = CountrySubdivision.findFirst(firstCharInNameIsE)
+        check found.isSome
+        check found.get().name.startsWith("E")

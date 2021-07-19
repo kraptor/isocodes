@@ -38,19 +38,19 @@ when not embedSubdivisions:
     let data = fromJson(readFile useSubdivisionsFile, CountrySubdivisions)
 
 
-declareCount  CountrySubdivision, data.objects, count
-declareAll    CountrySubdivision, data.objects, all
-declareAllIt  CountrySubdivision, data.objects, allIt
-declareOpt    CountrySubdivision, data.objects, byCode, code
-declareSeq    CountrySubdivision, data.objects, byName, name
-declareIt     CountrySubdivision, data.objects, byNameIt, name
-declareSeq    CountrySubdivision, data.objects, byType, `type`
-declareIt     CountrySubdivision, data.objects, byTypeIt, `type`
-declareSeq    CountrySubdivision, data.objects, byParent, parent
-declareIt     CountrySubdivision, data.objects, byParentIt, parent
-declareFind   CountrySubdivision, data.objects, find, FindCountrySubdivisionPredicateProc
-declareFindIt CountrySubdivision, data.objects, findIt, FindCountrySubdivisionPredicateProc
-
+declareCount     CountrySubdivision, data.objects, count
+declareAll       CountrySubdivision, data.objects, all
+declareAllIt     CountrySubdivision, data.objects, allIt
+declareOpt       CountrySubdivision, data.objects, byCode, code
+declareSeq       CountrySubdivision, data.objects, byName, name
+declareIt        CountrySubdivision, data.objects, byNameIt, name
+declareSeq       CountrySubdivision, data.objects, byType, `type`
+declareIt        CountrySubdivision, data.objects, byTypeIt, `type`
+declareSeq       CountrySubdivision, data.objects, byParent, parent
+declareIt        CountrySubdivision, data.objects, byParentIt, parent
+declareFind      CountrySubdivision, data.objects, find, FindCountrySubdivisionPredicateProc
+declareFindIt    CountrySubdivision, data.objects, findIt, FindCountrySubdivisionPredicateProc
+declareFindFirst CountrySubdivision, data.objects, findFirst, FindCountrySubdivisionPredicateProc
 
 proc byCountryCode*(T: type CountrySubdivision, country_code: string): seq[CountrySubdivision] =
     for c in data.objects:

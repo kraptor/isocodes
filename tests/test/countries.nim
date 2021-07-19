@@ -80,6 +80,13 @@ suite suiteNameCountries:
         check found.len > 0
         for c in found:
             check c.name.startsWith("E")
+
+    test "Find by predicate (iterator)":
+        var found = false
+        for c in Country.find(firstCharInNameIsE):
+            check c.name.startsWith("E")
+            found = true
+        check found == true
         
     test "Find by predicate (first)":
         let found = Country.findFirst(firstCharInNameIsE)

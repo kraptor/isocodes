@@ -14,3 +14,6 @@ export removed_countries
 
 import isocodes/scripts
 export scripts
+
+import isocodes/currencies
+export currencies

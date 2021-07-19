@@ -11,3 +11,6 @@ switch("define", "useRemovedCountriesFile=src/isocodes/resources/iso_3166-3.json
 
 switch("define", "embedScripts=false")
 switch("define", "useScriptsFile=src/isocodes/resources/iso_15924.json")
+
+switch("define", "embedCurrencies=false")
+switch("define", "useCurrenciesFile=src/isocodes/resources/iso_4217.json")

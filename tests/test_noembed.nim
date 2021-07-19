@@ -5,7 +5,8 @@
 
 import unittest
 
-include test_countries
-include test_subdivisions
-include test_removed_countries
-include test_scripts
+include ../tests/test/countries
+include ../tests/test/subdivisions
+include ../tests/test/removed_countries
+include ../tests/test/scripts
+include ../tests/test/currencies

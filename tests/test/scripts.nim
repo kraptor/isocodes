@@ -68,6 +68,13 @@ suite suiteNameScripts:
             check c.name.startsWith("E")
             found = true
         check found
+
+    test "Find by predicate (iterator)":
+        var found = false
+        for c in Script.find(firstCharInNameIsE):
+            check c.name.startsWith("E")
+            found = true
+        check found == true
         
     test "Find by predicate (first)":
         let found = Script.findFirst(firstCharInNameIsE)

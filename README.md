@@ -17,10 +17,13 @@ you don't want to use the provided ones (or if they become obsolete).
 
 ## Supported ISO standards
 
-- ISO 3166-1 (countries)
-- ISO 3166-2 (country subdivisions)
-- ISO 3166-3 (removed countries)
-- ISO 15924 (scripts)
+| ISO | Description | Library type |
+|-|-|-|
+| ISO 3166-1 | Name of countries    | `Country`           |
+| ISO 3166-2 | Country subdivisions | `CountrySubdivision`|
+| ISO 3166-3 | Countries removed from the standard. | `RemovedCountry`    |
+| ISO 15924  | Language scripts     | `Script`            |
+| ISO 4217   | Currencies           | `Currency`          |
 
 ## Example
 
@@ -51,12 +54,12 @@ The following attributes are available for each `Country` instance:
 
 | Attribute | Description |
 |-|-|
-|`name`         | country name.                   |
-|`official_name`| official name of the country.   |
-|`common_name`  | common name for the country.    |
-|`alpha_2`      | country ISO code (2 characters).|
-|`alpha_3`      | country ISO code (3 characters).|
-|`numeric`      | numeric code for the country. **NOTE**: this is a string. |
+|`name`         | Country name.                   |
+|`official_name`| Official name of the country.   |
+|`common_name`  | Common name for the country.    |
+|`alpha_2`      | Country ISO code (2 characters).|
+|`alpha_3`      | Country ISO code (3 characters).|
+|`numeric`      | Numeric code for the country. **NOTE**: this is a string. |
 
 #### Country Procedures
 
@@ -105,6 +108,7 @@ The following attributes are available for each `Country` instance:
 |`.byTypeIt(str)`       | Iterator for subdivisions with the specified type.          |
 |`.byParent(str)`       | `seq` for subdivisions with the specified parent value.     |
 |`.byParentIt(str)`     | Iterator for subdivisions with the specified parent value.  |
+|`.find(proc)`          | `seq` for all subdivisions that proc evaluates to `true`.   |
 |`.findIt(proc)`        | Iterator for all subdivisions that proc evaluates to `true`.|
 |`.findFirst(proc)`     | `Option[CountrySubdivision]` were proc evaluates to `true`. |
 
@@ -114,14 +118,14 @@ The following attributes are available for each `Country` instance:
 
 | Attribute | Description |
 |-|-|
-|`name`           | country name.                    |
-|`official_name`  | official name of the country.    |
-|`alpha_2`        | country ISO code (2 characters). |
-|`alpha_3`        | country ISO code (3 characters). |
-|`alpha_4`        | country ISO code (4 characters). |
-|`numeric`        | numeric code for the country. <br/> **NOTE**: this is a string.|
-|`comment`        | comment about the country.       |
-|`withdrawal_date`| date of withdrawal (format: YYYY or YYYY-MM-DD) <br/> **NOTE**: this is a string.|
+|`name`           | Country name.                    |
+|`official_name`  | Official name of the country.    |
+|`alpha_2`        | Country ISO code (2 characters). |
+|`alpha_3`        | Country ISO code (3 characters). |
+|`alpha_4`        | Country ISO code (4 characters). |
+|`numeric`        | Numeric code for the country. <br/> **NOTE**: this is a string.|
+|`comment`        | Comment about the country.       |
+|`withdrawal_date`| Date of withdrawal (format: YYYY or YYYY-MM-DD) <br/> **NOTE**: this is a string.|
 
 #### RemovedCountry Procedures
 
@@ -149,9 +153,9 @@ The following attributes are available for each `Country` instance:
 
 | Attribute | Description |
 |-|-|
-|`name`           | script name.                    |
-|`alpha_4`        | script ISO code (4 characters). |
-|`numeric`        | numeric code for the script. <br/> **NOTE**: this is a string.|
+|`name`           | Script name.                    |
+|`alpha_4`        | Script ISO code (4 characters). |
+|`numeric`        | Numeric code for the script. <br/> **NOTE**: this is a string.|
 
 #### Script Procedures
 
@@ -166,6 +170,30 @@ The following attributes are available for each `Country` instance:
 |`.find(proc)`     | `seq` for all scripts that proc evaluates to `true`.    |
 |`.findIt(proc)`   | Iterator for all scripts that proc evaluates to `true`. |
 |`.findFirst(proc)`| `Option[Script]` were proc evaluates to `true`.         |
+
+### Currency API
+
+#### Currency Attributes
+
+| Attribute | Description |
+|-|-|
+|`name`           | Currency name.                    |
+|`alpha_3`        | Currency ISO code (4 characters). |
+|`numeric`        | Numeric code for the script. <br/> **NOTE**: this is a string.|
+
+#### Currency Procedures
+
+| Procedure | Description |
+|-|-|
+|`.count()`        | Number of currencies.                                     |
+|`.all()`          | `seq` for all currencies.                                 |
+|`.allIt()`        | Iterator for all currencies.                              |
+|`.byName(str)`    | `Option[Currency]` with the specified name.               |
+|`.byAlpha3(str)`  | `Option[Currency]` with the specified alpha3 code.        |
+|`.byNumeric(str)` | `Option[Currency]` with the specified numeric code.       |
+|`.find(proc)`     | `seq` for all currencies that proc evaluates to `true`.   |
+|`.findIt(proc)`   | Iterator for all currencies that proc evaluates to `true`.|
+|`.findFirst(proc)`| `Option[Currency]` were proc evaluates to `true`.         |
 
 ## Compilation flags
 
