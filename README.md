@@ -9,8 +9,9 @@
 
 # `isocodes`
 
-ISO codes for Nim that allows to embed the data within the executable (or load 
-them automatically at runtime).
+ISO codes for Nim.
+
+Supports loading the data at runtime or embedding it within the executable
 
 Provides the utility `isocodes_download` to download latest JSON packages when
 you don't want to use the provided ones (or if they become obsolete).
