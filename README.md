@@ -16,6 +16,9 @@ Supports loading the data at runtime or embedding it within the executable
 Provides the utility `isocodes_download` to download latest JSON packages when
 you don't want to use the provided ones (or if they become obsolete).
 
+By default all data is embedded within the executable. See section [Compilation flags](#compilation-flags) on how to specify the files to load/embed and  how to
+load the data at runtime if you need to.
+
 ## Supported ISO standards
 
 | ISO | Description | Library type |
