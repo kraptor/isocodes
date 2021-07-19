@@ -218,7 +218,11 @@ to provide your own files, or if you want to load the data at runtime.
 | **Scripts**
 |`-d:embedScripts=true`  | Embed scripts data within the executable.|
 |`-d:embedScripts=false` | Load scripts data at runtime.            |
-|`-d:useScriptsFile=PATH`| Use a specific scripts JSON file.                |
+|`-d:useScriptsFile=PATH`| Use a specific scripts JSON file.        |
+| **Curencies**
+|`-d:embedCurrencies=true`  | Embed currencies data within the executable.|
+|`-d:embedCurrencies=false` | Load currencies data at runtime.            |
+|`-d:useCurrenciesFile=PATH`| Use a specific currencies JSON file.        |
 
 ## Source
 
