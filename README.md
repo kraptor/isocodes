@@ -23,11 +23,12 @@ load the data at runtime if you need to.
 
 | ISO | Description | Library type |
 |-|-|-|
-| ISO 3166-1 | Name of countries    | `Country`           |
-| ISO 3166-2 | Country subdivisions | `CountrySubdivision`|
+| ISO 3166-1 | Name of countries                    | `Country`           |
+| ISO 3166-2 | Country subdivisions                 | `CountrySubdivision`|
 | ISO 3166-3 | Countries removed from the standard. | `RemovedCountry`    |
-| ISO 15924  | Language scripts     | `Script`            |
-| ISO 4217   | Currencies           | `Currency`          |
+| ISO 15924  | Language scripts                     | `Script`            |
+| ISO 4217   | Currencies                           | `Currency`          |
+| ISO 639-2  | Languages                            | `Language`          |
 
 ## Example
 
@@ -182,8 +183,8 @@ The following attributes are available for each `Country` instance:
 | Attribute | Description |
 |-|-|
 |`name`           | Currency name.                    |
-|`alpha_3`        | Currency ISO code (4 characters). |
-|`numeric`        | Numeric code for the script. <br/> **NOTE**: this is a string.|
+|`alpha_3`        | Currency ISO code (3 characters). |
+|`numeric`        | Numeric code for the currency. <br/> **NOTE**: this is a string.|
 
 #### Currency Procedures
 
@@ -198,6 +199,34 @@ The following attributes are available for each `Country` instance:
 |`.find(proc)`     | `seq` for all currencies that proc evaluates to `true`.   |
 |`.findIt(proc)`   | Iterator for all currencies that proc evaluates to `true`.|
 |`.findFirst(proc)`| `Option[Currency]` were proc evaluates to `true`.         |
+
+### Language API
+
+#### Language Attributes
+
+| Attribute | Description |
+|-|-|
+|`name`           | Language name.                    |
+|`alpha_2`        | Language ISO code (2 characters). |
+|`alpha_3`        | Language ISO code (3 characters). |
+|`common_name`    | Language common name.             |
+|`bibliographic`  | Language bibliographic code.      |
+
+#### Language Procedures
+
+| Procedure | Description |
+|-|-|
+|`.count()`             | Number of languages.                                     |
+|`.all()`               | `seq` for all languages.                                 |
+|`.allIt()`             | Iterator for all languages.                              |
+|`.byName(str)`         | `Option[Language]` with the specified name.              |
+|`.byCommonName(str)`   | `Option[Language]` with the specified common name.       |
+|`.byAlpha2(str)`       | `Option[Language]` with the specified alpha2 code.       |
+|`.byAlpha3(str)`       | `Option[Language]` with the specified alpha3 code.       |
+|`.byBibliographic(str)`| `Option[Language]` with the specified bibliographic code.|
+|`.find(proc)`          | `seq` for all languages that proc evaluates to `true`.   |
+|`.findIt(proc)`        | Iterator for all languages that proc evaluates to `true`.|
+|`.findFirst(proc)`     | `Option[Language]` were proc evaluates to `true`.        |
 
 ## Compilation flags
 
@@ -223,10 +252,14 @@ to provide your own files, or if you want to load the data at runtime.
 |`-d:embedScripts=true`  | Embed scripts data within the executable.|
 |`-d:embedScripts=false` | Load scripts data at runtime.            |
 |`-d:useScriptsFile=PATH`| Use a specific scripts JSON file.        |
-| **Curencies**
+| **Currencies**
 |`-d:embedCurrencies=true`  | Embed currencies data within the executable.|
 |`-d:embedCurrencies=false` | Load currencies data at runtime.            |
 |`-d:useCurrenciesFile=PATH`| Use a specific currencies JSON file.        |
+| **Language**
+|`-d:embedLanguages=true`  | Embed languages data within the executable.|
+|`-d:embedLanguages=false` | Load languages data at runtime.            |
+|`-d:useLanguagesFile=PATH`| Use a specific languages JSON file.        |
 
 ## Source
 

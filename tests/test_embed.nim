@@ -5,8 +5,7 @@
 
 import unittest
 
-include ../tests/test/countries
-include ../tests/test/subdivisions
-include ../tests/test/removed_countries
-include ../tests/test/scripts
-include ../tests/test/currencies
+# Embed test is the same as 'noembed' but we tell the compiler
+# to embed all resources. Look at the test_embed.nims file
+# for details on what compiler flags are used
+include test_noembed

@@ -17,3 +17,6 @@ export scripts
 
 import isocodes/currencies
 export currencies
+
+import isocodes/languages
+export languages
