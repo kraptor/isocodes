@@ -8,12 +8,13 @@ import httpclient
 
 const 
     RESOURCES = [
-        ("ISO 3166-1 - Countries", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_3166-1.json"),
+        ("ISO 3166-1 - Countries           ", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_3166-1.json"),
         ("ISO 3166-2 - Country Subdivisions", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_3166-2.json"),
-        ("ISO 3166-3 - Removed Countries", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_3166-3.json"),
-        ("ISO 15924  - Name of Scripts", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_15924.json"),
-        ("ISO 4217   - Currencies", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_4217.json"),
-        ("ISO 639-2  - Languages", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_639-2.json"),
+        ("ISO 3166-3 - Removed Countries   ", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_3166-3.json"),
+        ("ISO 15924  - Name of Scripts     ", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_15924.json"),
+        ("ISO 4217   - Currencies          ", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_4217.json"),
+        ("ISO 639-2  - Languages           ", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_639-2.json"),
+        ("ISO 639-5  - Languages Families  ", "https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/main/data/iso_639-5.json"),
     ]
 
 

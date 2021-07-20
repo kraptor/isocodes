@@ -38,10 +38,10 @@ suite suiteNameCountries:
     test "Can get count":
         check Country.count() == TOTAL_COUNTRIES
 
-    test "Can get countries":
+    test "Can get items":
         check Country.all().len == TOTAL_COUNTRIES
 
-    test "Country not found":
+    test "Item not found":
         check Country.byName("Narnia").isSome == false
         check Country.byAlpha2("Narnia").isSome == false
         check Country.byAlpha3("Narnia").isSome == false

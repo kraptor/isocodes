@@ -28,10 +28,6 @@ const
 
 
 template test_greek(c: Option[Language]) =
-    # "alpha_2": "el",
-    # "alpha_3": "ell",
-    # "bibliographic": "gre",
-    # "name": "Greek, Modern (1453-)"
     check c.isSome
     check c.get().name == "Greek, Modern (1453-)"
     check c.get().alpha2 == "el"
@@ -47,10 +43,10 @@ suite suiteNameLanguages:
     test "Can get count":
         check Language.count() == TOTAL_LANGUAGES
 
-    test "Can get Languages":
+    test "Can get items":
         check Language.all().len == TOTAL_LANGUAGES
 
-    test "Language not found":
+    test "Item not found":
         check Language.byName("Narnia").isSome == false
         check Language.byAlpha2("Narnia").isSome == false
         check Language.byAlpha3("Narnia").isSome == false

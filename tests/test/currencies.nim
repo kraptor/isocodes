@@ -37,10 +37,10 @@ suite suiteNameCurrencies:
     test "Can get count":
         check Currency.count() == TOTAL_CURRENCIES
 
-    test "Can get countries":
+    test "Can get items":
         check Currency.all().len == TOTAL_CURRENCIES
 
-    test "Currency not found":
+    test "Item not found":
         check Currency.byName("Narnia").isSome == false
         check Currency.byAlpha3("Narnia").isSome == false
         check Currency.byNumeric("00000000").isSome == false

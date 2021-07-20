@@ -35,15 +35,14 @@ suite suiteNameSubdivisions:
     test "Can get count":
         check CountrySubdivision.count() == TOTAL_SUBDIVISIONS
 
-    test "Can get subdivisions":
+    test "Can get item":
         check CountrySubdivision.all().len == TOTAL_SUBDIVISIONS
 
-    test "Subdivions not found":
+    test "Item not found":
         check CountrySubdivision.byName("Narnia").len == 0
         check CountrySubdivision.byCode("Narnia").isSome == false
         check CountrySubdivision.byType("Narnia").len == 0
         check CountrySubdivision.byParent("Narnia").len == 0
-        # check CountrySubdivision.byNameIt("Narnia").seq().len == 0
 
     test "Find by code":
         let found = CountrySubdivision.byCode("AL-01")

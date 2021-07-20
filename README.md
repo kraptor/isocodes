@@ -29,6 +29,7 @@ load the data at runtime if you need to.
 | ISO 15924  | Language scripts                     | `Script`            |
 | ISO 4217   | Currencies                           | `Currency`          |
 | ISO 639-2  | Languages                            | `Language`          |
+| ISO 639-5  | Language Families                    | `Language Families` |
 
 ## Example
 
@@ -228,6 +229,28 @@ The following attributes are available for each `Country` instance:
 |`.findIt(proc)`        | Iterator for all languages that proc evaluates to `true`.|
 |`.findFirst(proc)`     | `Option[Language]` were proc evaluates to `true`.        |
 
+### LanguageFamily API
+
+#### LanguageFamily Attributes
+
+| Attribute | Description |
+|-|-|
+|`name`           | Language family name.                    |
+|`alpha_3`        | Language family ISO code (3 characters). |
+
+#### LanguageFamily Procedures
+
+| Procedure | Description |
+|-|-|
+|`.count()`             | Number of language families.                                     |
+|`.all()`               | `seq` for all language families.                                 |
+|`.allIt()`             | Iterator for all language families.                              |
+|`.byName(str)`         | `Option[LanguageFamily]` with the specified name.                |
+|`.byAlpha3(str)`       | `Option[LanguageFamily]` with the specified alpha3 code.         |
+|`.find(proc)`          | `seq` for all language families that proc evaluates to `true`.   |
+|`.findIt(proc)`        | Iterator for all language families that proc evaluates to `true`.|
+|`.findFirst(proc)`     | `Option[LanguageFamily]` were proc evaluates to `true`.          |
+
 ## Compilation flags
 
 With the following flags it's possible to embed the data (or not) and specify the JSON
@@ -260,6 +283,10 @@ to provide your own files, or if you want to load the data at runtime.
 |`-d:embedLanguages=true`  | Embed languages data within the executable.|
 |`-d:embedLanguages=false` | Load languages data at runtime.            |
 |`-d:useLanguagesFile=PATH`| Use a specific languages JSON file.        |
+| **Language Families**
+|`-d:embedLanguageFamilies=true`  | Embed language families data within the executable.|
+|`-d:embedLanguageFamilies=false` | Load language families data at runtime.            |
+|`-d:useLanguageFamiliesFile=PATH`| Use a specific language families JSON file.        |
 
 ## Source
 

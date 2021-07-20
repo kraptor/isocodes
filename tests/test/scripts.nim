@@ -36,10 +36,10 @@ suite suiteNameScripts:
     test "Can get count":
         check Script.count() == TOTAL_SCRIPTS
 
-    test "Can get Scripts":
+    test "Can get item":
         check Script.all().len == TOTAL_SCRIPTS
 
-    test "Script not found":
+    test "Item not found":
         check Script.byName("Narnia").isSome == false
         check Script.byAlpha4("Narnia").isSome == false
         check Script.byNumeric("00000000").isSome == false

@@ -44,10 +44,10 @@ suite suiteNameRemovedCountries:
     test "Can get count":
         check RemovedCountry.count() == TOTAL_REMOVED_COUNTRIES
 
-    test "Can get removed countries":
+    test "Can get items":
         check RemovedCountry.all().len == TOTAL_REMOVED_COUNTRIES
 
-    test "RemovedCountry not found":
+    test "Item not found":
         check RemovedCountry.byName("Narnia").isSome == false
         check RemovedCountry.byAlpha2("Narnia").isSome == false
         check RemovedCountry.byAlpha3("Narnia").isSome == false
