@@ -29,7 +29,7 @@ load the data at runtime if you need to.
 | ISO 15924  | Language scripts                     | `Script`            |
 | ISO 4217   | Currencies                           | `Currency`          |
 | ISO 639-2  | Languages                            | `Language`          |
-| ISO 639-5  | Language Families                    | `Language Families` |
+| ISO 639-5  | Language Families                    | `LanguageFamily`    |
 
 ## Example
 
