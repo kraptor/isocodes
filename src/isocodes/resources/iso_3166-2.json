@@ -5230,7 +5230,7 @@
     },
     {
       "code": "DO-03",
-      "name": "Bahoruco",
+      "name": "Baoruco",
       "type": "Province"
     },
     {
@@ -5250,12 +5250,12 @@
     },
     {
       "code": "DO-07",
-      "name": "La Estrelleta [Elías Piña]",
+      "name": "Elías Piña",
       "type": "Province"
     },
     {
       "code": "DO-08",
-      "name": "El Seybo [El Seibo]",
+      "name": "El Seibo",
       "type": "Province"
     },
     {
@@ -5310,7 +5310,7 @@
     },
     {
       "code": "DO-19",
-      "name": "Salcedo",
+      "name": "Hermanas Mirabal",
       "type": "Province"
     },
     {
@@ -5366,6 +5366,16 @@
     {
       "code": "DO-30",
       "name": "Hato Mayor",
+      "type": "Province"
+    },
+    {
+      "code": "DO-31",
+      "name": "San José de Ocoa",
+      "type": "Province"
+    },
+    {
+      "code": "DO-32",
+      "name": "Santo Domingo",
       "type": "Province"
     },
     {
@@ -10217,7 +10227,7 @@
       "code": "ID-AC",
       "name": "Aceh",
       "parent": "SM",
-      "type": "Autonomous Province"
+      "type": "Province"
     },
     {
       "code": "ID-BA",
@@ -10227,7 +10237,7 @@
     },
     {
       "code": "ID-BB",
-      "name": "Bangka Belitung",
+      "name": "Kepulauan Bangka Belitung",
       "parent": "SM",
       "type": "Province"
     },
@@ -10248,11 +10258,6 @@
       "name": "Gorontalo",
       "parent": "SL",
       "type": "Province"
-    },
-    {
-      "code": "ID-IJ",
-      "name": "Papua",
-      "type": "Geographical unit"
     },
     {
       "code": "ID-JA",
@@ -10276,7 +10281,7 @@
       "code": "ID-JK",
       "name": "Jakarta Raya",
       "parent": "JW",
-      "type": "Special District"
+      "type": "Capital District"
     },
     {
       "code": "ID-JT",
@@ -10287,12 +10292,12 @@
     {
       "code": "ID-JW",
       "name": "Jawa",
-      "type": "Geographical unit"
+      "type": "Geographical Unit"
     },
     {
       "code": "ID-KA",
       "name": "Kalimantan",
-      "type": "Geographical unit"
+      "type": "Geographical Unit"
     },
     {
       "code": "ID-KB",
@@ -10321,6 +10326,12 @@
     {
       "code": "ID-KT",
       "name": "Kalimantan Tengah",
+      "parent": "KA",
+      "type": "Province"
+    },
+    {
+      "code": "ID-KU",
+      "name": "Kalimantan Utara",
       "parent": "KA",
       "type": "Province"
     },
@@ -10362,19 +10373,24 @@
     {
       "code": "ID-NU",
       "name": "Nusa Tenggara",
-      "type": "Geographical unit"
+      "type": "Geographical Unit"
     },
     {
       "code": "ID-PA",
       "name": "Papua",
-      "parent": "IJ",
+      "parent": "PP",
       "type": "Province"
     },
     {
       "code": "ID-PB",
       "name": "Papua Barat",
-      "parent": "IJ",
+      "parent": "PP",
       "type": "Province"
+    },
+    {
+      "code": "ID-PP",
+      "name": "Papua",
+      "type": "Geographical Unit"
     },
     {
       "code": "ID-RI",
@@ -10390,7 +10406,7 @@
     },
     {
       "code": "ID-SB",
-      "name": "Sumatra Barat",
+      "name": "Sumatera Barat",
       "parent": "SM",
       "type": "Province"
     },
@@ -10403,12 +10419,12 @@
     {
       "code": "ID-SL",
       "name": "Sulawesi",
-      "type": "Geographical unit"
+      "type": "Geographical Unit"
     },
     {
       "code": "ID-SM",
       "name": "Sumatera",
-      "type": "Geographical unit"
+      "type": "Geographical Unit"
     },
     {
       "code": "ID-SN",
@@ -10424,7 +10440,7 @@
     },
     {
       "code": "ID-SS",
-      "name": "Sumatra Selatan",
+      "name": "Sumatera Selatan",
       "parent": "SM",
       "type": "Province"
     },
