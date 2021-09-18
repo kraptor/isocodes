@@ -18,6 +18,7 @@ type
         numeric*: string
         official_name*: string
         common_name*: string
+        flag*: string
 
     Countries* = object
         objects: seq[Country]

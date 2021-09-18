@@ -28,6 +28,7 @@ template test_aruba(c: Option[Country]) =
     check c.get().alpha2 == "AW"
     check c.get().alpha3 == "ABW"
     check c.get().numeric == "533"
+    echo c.get().flag
 
 
 proc firstCharInNameIsE(c: Country): bool =

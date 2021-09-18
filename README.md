@@ -66,6 +66,7 @@ The following attributes are available for each `Country` instance:
 |`alpha_2`      | Country ISO code (2 characters).|
 |`alpha_3`      | Country ISO code (3 characters).|
 |`numeric`      | Numeric code for the country. **NOTE**: this is a string. |
+|`flag`         | Flag emoji for the country. |
 
 #### Country Procedures
 
