@@ -12,7 +12,6 @@ jobs:
         nimversion:
           - 1.4.0
           - binary:stable
-          - devel
         os:
           - windows-latest
           # - macos-latest
