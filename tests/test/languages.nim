@@ -18,7 +18,7 @@ import isocodes
 
 
 const 
-    TOTAL_LANGUAGES = 486
+    TOTAL_LANGUAGES = 487
 
     suiteNameLanguages = when 
         defined(embedLanguages):

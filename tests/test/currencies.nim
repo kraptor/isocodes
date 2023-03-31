@@ -13,7 +13,7 @@ import isocodes
 
 
 const 
-    TOTAL_CURRENCIES = 170
+    TOTAL_CURRENCIES = 181
 
     suiteNameCurrencies = when 
         defined(embedCurrencies):

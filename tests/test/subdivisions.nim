@@ -18,7 +18,7 @@ import isocodes
 
 
 const 
-    TOTAL_SUBDIVISIONS = 5123
+    TOTAL_SUBDIVISIONS = 5127
 
     suiteNameSubdivisions = when 
         defined(embedSubdivisions):

@@ -86,13 +86,13 @@ suite suiteNameRemovedCountries:
 
     test "Find by withdrawal year":
         let found = RemovedCountry.byWithdrawalYear("1993")
-        check found.len == 4
+        check found.len == 2
 
     test "Find by withdrawal date (iterator)":
         var count = 0
         for c in RemovedCountry.byWithdrawalYearIt("1993"):
             inc count
-        check count == 4
+        check count == 2
     
     test "Find by predicate (all)":
         let found = RemovedCountry.find(firstCharInNameIsB)
