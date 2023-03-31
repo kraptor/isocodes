@@ -6,22 +6,23 @@ on:
 
 jobs:
   test:
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        nimversion:
+          - 1.4.0
+          - binary:stable
+          - devel
         os:
           - windows-latest
           # - macos-latest
           - ubuntu-latest
-        nimversion:
-          - stable
-          - devel
     name: ${{ matrix.os }} - ${{ matrix.nimversion }}
-    runs-on: ${{ matrix.os }}
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-      - uses: iffy/install-nim@v3.2.0
+      - uses: iffy/install-nim@v4
         with:
           version: ${{ matrix.nimversion }}
       - run: nim --version
