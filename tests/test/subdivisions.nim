@@ -18,7 +18,7 @@ import isocodes
 
 
 const 
-    TOTAL_SUBDIVISIONS = 5127
+    TOTAL_SUBDIVISIONS = 5046
 
     suiteNameSubdivisions = when 
         defined(embedSubdivisions):
@@ -99,15 +99,15 @@ suite suiteNameSubdivisions:
         check found
 
     test "Find by parent code (seq)":
-        var found = CountrySubdivision.byParent("01")
+        var found = CountrySubdivision.byParent("AZ-NX")
         check found.len > 0
         for item in found:
-            check item.parent == "01"
+            check item.parent == "AZ-NX"
 
     test "Find by parent code (iterator)":
         var found = false
-        for item in CountrySubdivision.byParent("01"):
-            check item.parent == "01"
+        for item in CountrySubdivision.byParent("AZ-NX"):
+            check item.parent == "AZ-NX"
             found = true
         check found
 
